@@ -21,7 +21,7 @@ public class SaleController {
 	@Autowired
 	private SaleService service;
 	
-	@GetMapping
+	@GetMapping(value = "page")
 	public ResponseEntity<Page<SaleDTO>> findAll(Pageable pageable){
 		Page<SaleDTO> list = service.findAll(pageable);
 		return ResponseEntity.ok(list);
